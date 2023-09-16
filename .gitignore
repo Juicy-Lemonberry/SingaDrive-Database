@@ -1,0 +1,10 @@
+# Ignore all files in mongo_volume
+mongo_volume/*
+
+# Except for README.md
+!mongo_volume/README.md
+
+# Except for the mongo_volume directory itself
+!mongo_volume/
+
+.env
