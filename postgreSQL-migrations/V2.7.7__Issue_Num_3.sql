@@ -49,3 +49,10 @@ BEGIN
   WHERE u.id = user_id;
 END;
 $$ LANGUAGE plpgsql;
+
+-- Set to cascade delete the session token when the account is deleted.
+ALTER TABLE "user"."account_sessions"
+ADD CONSTRAINT fk_account_sessions_account_id
+FOREIGN KEY (account_id)
+REFERENCES "user"."accounts"(id)
+ON DELETE CASCADE;
