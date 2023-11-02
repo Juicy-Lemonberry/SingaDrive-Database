@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Docker Compose Database Server",
+            "type": "shell",
+            "command": "docker compose --env-file .env up --build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "panel": "new"
+            }
+        }
+    ]
+}
