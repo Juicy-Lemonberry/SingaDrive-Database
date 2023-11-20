@@ -1,0 +1,1 @@
+INSERT INTO "forum"."sections" ("title") VALUES ('Annoucements'), ('General');
