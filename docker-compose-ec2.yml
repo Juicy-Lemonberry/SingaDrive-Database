@@ -5,14 +5,10 @@ services:
     image: mongo:latest
     volumes:
       - mongodb_data:/data/db
-    ports:
-      - '27017:27017'
     network_mode: host
 
   postgres:
     image: postgres:latest
-    ports:
-      - '5432:5432'
     environment:
       POSTGRES_DB: singadrive_db
       POSTGRES_USER: ${SINGADRIVE_POSTGRES_USERNAME}
@@ -34,8 +30,6 @@ services:
   pgadmin:
     network_mode: host
     image: dpage/pgadmin4
-    ports:
-      - '8080:8080'
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
@@ -49,8 +43,6 @@ services:
       ME_CONFIG_MONGODB_PORT: 27017
       ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_EXPRESS_USER}
       ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_EXPRESS_PASSWORD}
-    ports:
-      - '8081:8081'
 
 volumes:
   mongodb_data:
